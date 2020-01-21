@@ -183,10 +183,24 @@ include 'includes/data.php';
 
 <?php include_once('pixelcode/pixelhelper.php'); ?>
 
+<?php if(isset($data->Lo_Site_Id)) {
+    ?>
+    }
+    <script type='text/javascript'>
+        window.__lo_site_id = <?php echo $data->Lo_Site_Id; ?>;
 
-<script>
-
-</script>
+            (function () {
+                var wa = document.createElement('script');
+                wa.type = 'text/javascript';
+                wa.async = true;
+                wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wa, s);
+            })();
+    </script>
+    <?php
+}
+?>
 <script src="resources/js/main.min.js?1=2"></script>
 
 <script lang="template/html" type="template/html" id="WasTemplate">
